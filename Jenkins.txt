@@ -1,0 +1,53 @@
+Jenkins
+Pipline
+构建触发器（内置触发器）
+触发远程构建（复制链接--网页打开--回车构建）
+其他工程构建后触发：需要其他工程触发（输入前置工程，构建前置工程会触发当前构建）
+定时构建（约定时间来构建  分时日月周 从左到右  运用一些表达式来定时）
+轮询SCM（定时扫描代码库是否有代码变更，定时扫描同样运用表达式）
+
+webhook替代轮询SCM
+Gitlab有变更 去Jenkins 发送构建请求  （网页构建）（插件 Gitlab+Gitlab Hook）
+Gitlab（开启 webhook功能  Jenkins配置的url地址放入Gitlab）
+
+参数化构建
+分支切换 可以切换不同分支来构建
+
+配置邮件发送构建结果
+安装Email  Extension 插件  去有限开启对应服务smftp服务
+
+
+代码审查
+通过工具或者软件 来发现问题 提高代码质量
+SonarQube
+环境
+JDK   MySQL   SonarQube
+Jenkins --- 调用--- Sonar-Scanner   -提交审查结果---- SonarQuBe---保存审查结果---MySQL数据库
+安装SonarQuBe  Scanner插件
+
+代码审查 （非流水线项目）
+自由风格  和MaVen  
+编写代码审查的程序 （ JenKins  页面配置）
+
+代码审查 （流水线项目）
+放在源码下面 (sonar_projiect.properties   这个文件名固定)
+
+
+Jenkins  +Docker+SpringCloud 微服务持续集成
+tamocat容器（war）
+代码托管服务器   持续集成服务器      Docker仓库服务器 （jar）    生产部署服务器
+
+SpringCloud微服务架构
+前后端分离
+前端：NodeJS+VueJS+ElementIU
+后端:  SpringBoot+SpringCloud+SpringDataJpa
+
+Docker容器
+开源应用容器基于GO  语言  遵循APache2.0的协议
+快速打包应用以及依赖包到一个容器中 去linux服务器中部署
+镜像  相当于app
+容器：先创建镜像  再创建容器
+每个镜像相互独立 互不影响
+
+Dockerfile
+构建Docker镜像源码 其实就是自己添加的一些命令行合集
